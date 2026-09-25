@@ -1,0 +1,55 @@
+{
+ "versjon": 1,
+ "metoder": {
+  "black_litterman": [
+   {
+    "beslutningsdato": "2026-09-25",
+    "vekter": {
+     "EQNR.OL": 0.094069,
+     "ODL.OL": 0.078907,
+     "DNB.OL": 0.07444,
+     "STB.OL": 0.091502,
+     "SB1NO.OL": 0.056191,
+     "MING.OL": 0.049766,
+     "NONG.OL": 0.06448,
+     "SPOL.OL": 0.052732,
+     "KOG.OL": 0.043563,
+     "KIT.OL": 0.026878,
+     "WWI.OL": 0.099748,
+     "VEI.OL": 0.086056,
+     "NORCO.OL": 0.048014,
+     "PEXIP.OL": 0.058703,
+     "SATS.OL": 0.074953
+    },
+    "vekter_for": {},
+    "omsetning": 1.0,
+    "merknader": []
+   }
+  ],
+  "bayes_stein": [
+   {
+    "beslutningsdato": "2026-09-25",
+    "vekter": {
+     "VAR.OL": 0.065369,
+     "BNOR.OL": 0.034274,
+     "ODL.OL": 0.056353,
+     "GJF.OL": 0.087799,
+     "MING.OL": 0.087242,
+     "NONG.OL": 0.05126,
+     "KIT.OL": 0.060627,
+     "WWI.OL": 0.059543,
+     "VEI.OL": 0.112686,
+     "NORCO.OL": 0.058626,
+     "ORK.OL": 0.071136,
+     "PEXIP.OL": 0.059128,
+     "TEL.OL": 0.06562,
+     "SATS.OL": 0.087977,
+     "ELMRA.OL": 0.042362
+    },
+    "vekter_for": {},
+    "omsetning": 1.0,
+    "merknader": []
+   }
+  ]
+ }
+}
