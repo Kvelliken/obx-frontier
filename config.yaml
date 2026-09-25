@@ -1,0 +1,52 @@
+# ─────────────────────────────────────────────────────────────
+# OBX Frontier – alle innstillinger ligger her.
+# Endrer du noe og pusher til GitHub, kjøres alt på nytt automatisk.
+# Merk: Live-porteføljen byttes først ved neste månedlige rebalansering.
+# ─────────────────────────────────────────────────────────────
+
+univers:
+  # CSV med ticker, navn og sektor. Rediger denne når OSEBX endres (1. juni og 1. desember).
+  kandidatfil: kandidater.csv
+  # En aksje er med bare hvis den er lett å selge:
+  min_median_omsetning_mnok: 5      # median daglig omsetning (MNOK) i vinduet under
+  likviditetsvindu_dager: 63        # ca. 3 måneder med handelsdager
+  min_andel_handelsdager: 0.90      # aksjen må ha handlet minst 90 % av dagene
+  # Posisjonsgrense ut fra likviditet: en posisjon skal kunne selges på
+  # «maks_dager_aa_selge» dager uten å stå for mer enn «deltakelsesgrad» av dagsomsetningen.
+  portefoljestorrelse_nok: 1000000
+  deltakelsesgrad: 0.20
+  maks_dager_aa_selge: 1
+
+referanseindeks:
+  ticker: OSEBX.OL                  # Oslo Børs hovedindeks, utbyttejustert (GI) hos Yahoo
+  navn: OSEBX
+
+data:
+  startdato: "2011-06-01"           # første kursdato som lastes ned
+
+risikofri_rente:
+  kilde: ssb                        # "ssb" = 3 mnd. NIBOR fra SSB tabell 10701, "fast" = bruk fast_rente
+  fast_rente: 0.045                 # brukes hvis SSB ikke svarer, og før SSB-serien starter (2013)
+
+estimering:
+  vindu_uker: 156                   # 3 år med ukentlige avkastninger
+  min_dekning: 0.95                 # aksjen må ha kurs i minst 95 % av ukene i vinduet
+  hovedmetode: black_litterman      # "black_litterman" eller "bayes_stein" – vises først på siden
+  black_litterman:
+    tau: 0.05                       # usikkerhet i likevektsavkastningen
+    risikoaversjon: 2.5             # delta i π = δ·Σ·w_marked
+
+optimering:
+  maks_vekt: 0.20                   # maks 20 % i ett selskap
+  maks_sektorvekt: 0.40             # maks 40 % i én sektor
+  min_antall: 5
+  maks_antall: 15
+  min_vekt: 0.02                    # posisjoner under 2 % fjernes (unngår småposter)
+  maks_omsetning: 0.30              # maks 30 % av porteføljen byttes ut per rebalansering (én vei)
+  transaksjonskostnad: 0.002        # 0,20 % av handlet beløp (kurtasje + spread)
+
+backtest:
+  startdato: "2015-01-01"
+
+effisient_front:
+  punkter: 40

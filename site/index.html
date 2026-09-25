@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OBX Frontier</title>
+<meta name="description" content="Markowitz-optimalisert portefølje av likvide aksjer på Oslo Børs, målt mot OSEBX. Oppdateres hver børsdag, rebalanseres månedlig.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M4 27 C9 12 17 7 28 5' stroke='%230B6E69' stroke-width='3.5' fill='none' stroke-linecap='round'/><circle cx='18' cy='9.5' r='4' fill='%23D9A21B'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>OBX Frontier</h1>
+    <p class="lede">Markowitz-portefølje av likvide aksjer på Oslo Børs, målt mot <span data-f="indeks">OSEBX</span>.</p>
+  </div>
+  <div class="status" id="status" aria-live="polite">Laster data …</div>
+  <div class="switch" role="radiogroup" aria-label="Estimeringsmetode" id="methodSwitch"></div>
+</header>
+
+<div class="demo-banner" id="demoBanner" hidden>Demodata: siden viser syntetiske kurser. Ekte tall kommer når GitHub Actions har kjørt.</div>
+
+<main id="app" hidden>
+  <section class="hero" aria-labelledby="frontTitle">
+    <div class="hero-chart">
+      <h2 id="frontTitle">Effisient front</h2>
+      <p class="sub">Hvert punkt er en aksje i universet. Kurven viser lavest mulig risiko for hver forventet avkastning, innenfor grensene for vekt og sektor.</p>
+      <div class="chart-box chart-tall"><canvas id="frontChart" aria-label="Effisient front med porteføljen markert" role="img"></canvas></div>
+      <ul class="legend" id="frontLegend"></ul>
+    </div>
+    <aside class="now" aria-labelledby="nowTitle">
+      <h2 id="nowTitle">Porteføljen nå</h2>
+      <p class="summary" id="nowSummary"></p>
+      <dl class="stats" id="nowStats"></dl>
+      <p class="fine" id="nowNotes"></p>
+    </aside>
+  </section>
+
+  <section aria-labelledby="holdTitle">
+    <div class="sec-head">
+      <h2 id="holdTitle">Beholdning</h2>
+      <p class="sub" id="holdSub"></p>
+    </div>
+    <div class="hold-grid">
+      <div class="table-wrap">
+        <table class="holdings" id="holdTable">
+          <thead><tr>
+            <th scope="col">Aksje</th>
+            <th scope="col">Sektor</th>
+            <th scope="col" class="num">Målvekt</th>
+            <th scope="col" class="num">Vekt nå</th>
+            <th scope="col" class="num">Forv. avk.</th>
+            <th scope="col" class="num">Volatilitet</th>
+            <th scope="col" class="num">Omsetning per dag</th>
+            <th scope="col" class="num">Dager å selge</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="sectors">
+        <h3>Sektorfordeling</h3>
+        <ol class="sector-bars" id="sectorBars"></ol>
+        <p class="fine" id="sectorNote"></p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="chgTitle">
+    <div class="sec-head">
+      <h2 id="chgTitle">Endringer ved siste rebalansering</h2>
+      <p class="sub" id="chgSub"></p>
+    </div>
+    <div class="changes">
+      <div><h3>Kjøp og økning</h3><ul id="buys" class="chg-list"></ul></div>
+      <div><h3>Salg og reduksjon</h3><ul id="sells" class="chg-list"></ul></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="perfTitle">
+    <div class="sec-head">
+      <h2 id="perfTitle">Utvikling mot <span data-f="indeks">OSEBX</span></h2>
+      <div class="tabs" role="tablist" aria-label="Periode" id="perfTabs">
+        <button role="tab" aria-selected="true" data-p="live">Live</button>
+        <button role="tab" aria-selected="false" data-p="backtest">Backtest</button>
+      </div>
+    </div>
+    <p class="sub" id="perfSub"></p>
+    <div class="perf-empty" id="perfEmpty" hidden></div>
+    <div id="perfBody">
+      <div class="chart-box chart-mid"><canvas id="perfChart" role="img" aria-label="Indeksert utvikling, portefølje mot referanseindeks"></canvas></div>
+      <div class="chart-box chart-short"><canvas id="ddChart" role="img" aria-label="Fall fra toppen"></canvas></div>
+      <div class="table-wrap">
+        <table class="metrics" id="metricTable">
+          <thead><tr><th scope="col">Nøkkeltall</th><th scope="col" class="num">Portefølje</th><th scope="col" class="num" data-f="indeks">OSEBX</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="yearTitle" id="yearSection">
+    <div class="sec-head">
+      <h2 id="yearTitle">Avkastning per år</h2>
+      <p class="sub">Backtest, etter transaksjonskostnader. Inneværende år er hittil i år.</p>
+    </div>
+    <div class="chart-box chart-mid"><canvas id="yearChart" role="img" aria-label="Årlig avkastning"></canvas></div>
+  </section>
+
+  <section aria-labelledby="uniTitle">
+    <div class="sec-head">
+      <h2 id="uniTitle">Univers og data</h2>
+    </div>
+    <div class="uni" id="uniBody"></div>
+  </section>
+
+  <section aria-labelledby="methodTitle" class="method">
+    <div class="sec-head"><h2 id="methodTitle">Slik fungerer modellen</h2></div>
+    <div class="prose" id="methodProse"></div>
+  </section>
+</main>
+
+<div class="error" id="error" hidden></div>
+
+<footer class="foot">
+  <p>Dette er et modellresultat og ikke investeringsråd. Historisk avkastning, og særlig simulert avkastning, er ingen garanti for fremtidig avkastning. Kursdata fra Yahoo Finance, rente fra SSB.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

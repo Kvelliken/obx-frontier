@@ -1,0 +1,82 @@
+ticker,navn,sektor
+EQNR.OL,Equinor,Energi
+AKRBP.OL,Aker BP,Energi
+VAR.OL,Vår Energi,Energi
+SUBC.OL,Subsea 7,Energi
+TGS.OL,TGS,Energi
+DNO.OL,DNO,Energi
+OKEA.OL,Okea,Energi
+BNOR.OL,BlueNord,Energi
+PEN.OL,Panoro Energy,Energi
+AKSO.OL,Aker Solutions,Energi
+ODL.OL,Odfjell Drilling,Energi
+BWO.OL,BW Offshore,Energi
+BORR.OL,Borr Drilling,Energi
+ARCH.OL,Archer,Energi
+NEL.OL,Nel,Energi
+DNB.OL,DNB Bank,Finans
+STB.OL,Storebrand,Finans
+GJF.OL,Gjensidige Forsikring,Finans
+PROT.OL,Protector Forsikring,Finans
+SB1NO.OL,SpareBank 1 Sør-Norge,Finans
+MING.OL,SpareBank 1 SMN,Finans
+NONG.OL,SpareBank 1 Nord-Norge,Finans
+SPOL.OL,SpareBank 1 Østlandet,Finans
+MORG.OL,Sparebanken Møre,Finans
+PARB.OL,Pareto Bank,Finans
+ABG.OL,ABG Sundal Collier,Finans
+AKER.OL,Aker,Finans
+BONHR.OL,Bonheur,Industri
+KOG.OL,Kongsberg Gruppen,Industri
+KMAR.OL,Kongsberg Maritime,Industri
+KIT.OL,Kitron,Industri
+FRO.OL,Frontline,Industri
+HAFNI.OL,Hafnia,Industri
+BWLPG.OL,BW LPG,Industri
+WAWI.OL,Wallenius Wilhelmsen,Industri
+HAUTO.OL,Höegh Autoliners,Industri
+MPCC.OL,MPC Container Ships,Industri
+FLNG.OL,Flex LNG,Industri
+CADLR.OL,Cadeler,Industri
+SNI.OL,Stolt-Nielsen,Industri
+ODF.OL,Odfjell SE,Industri
+KCC.OL,Klaveness Combination Carriers,Industri
+BELCO.OL,Belships,Industri
+WWI.OL,Wilh. Wilhelmsen,Industri
+VEI.OL,Veidekke,Industri
+AFG.OL,AF Gruppen,Industri
+TOM.OL,Tomra,Industri
+AUTO.OL,AutoStore,Industri
+HEX.OL,Hexagon Composites,Industri
+NORCO.OL,Norconsult,Industri
+MULTI.OL,Multiconsult,Industri
+NAS.OL,Norwegian Air Shuttle,Industri
+NHY.OL,Norsk Hydro,Råvarer
+YAR.OL,Yara International,Råvarer
+ELK.OL,Elkem,Råvarer
+BRG.OL,Borregaard,Råvarer
+NSKOG.OL,Norske Skog,Råvarer
+MOWI.OL,Mowi,Konsumvarer
+SALM.OL,SalMar,Konsumvarer
+ORK.OL,Orkla,Konsumvarer
+LSG.OL,Lerøy Seafood,Konsumvarer
+AUSS.OL,Austevoll Seafood,Konsumvarer
+GSF.OL,Grieg Seafood,Konsumvarer
+BAKKA.OL,Bakkafrost,Konsumvarer
+VEND.OL,Vend Marketplaces,Teknologi
+NOD.OL,Nordic Semiconductor,Teknologi
+ATEA.OL,Atea,Teknologi
+BOUV.OL,Bouvet,Teknologi
+PEXIP.OL,Pexip,Teknologi
+LINK.OL,LINK Mobility,Teknologi
+SMCRT.OL,SmartCraft,Teknologi
+TEL.OL,Telenor,Telekom
+EPR.OL,Europris,Forbruksvarer
+KID.OL,Kid,Forbruksvarer
+SATS.OL,SATS,Forbruksvarer
+MEDI.OL,Medistim,Helse
+PHO.OL,Photocure,Helse
+ENTRA.OL,Entra,Eiendom
+OLT.OL,Olav Thon Eiendomsselskap,Eiendom
+SCATC.OL,Scatec,Forsyning
+ELMRA.OL,Elmera Group,Forsyning
