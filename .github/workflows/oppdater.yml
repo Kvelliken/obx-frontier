@@ -1,0 +1,68 @@
+name: Oppdater portefølje
+
+on:
+  schedule:
+    # Hver børsdag kl. 17:00 UTC = 19:00 norsk sommertid / 18:00 vintertid.
+    # GitHub kan forsinke planlagte kjøringer med opptil en halvtime.
+    - cron: "0 17 * * 1-5"
+  push:
+    branches: [main]
+    paths-ignore:
+      - "state/**"
+      - "**.md"
+
+permissions:
+  contents: write     # for å lagre state/live.json
+  pages: write        # for å publisere til GitHub Pages
+  id-token: write
+
+concurrency:
+  group: oppdater-portefolje
+  cancel-in-progress: false
+
+jobs:
+  bygg:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Installer pakker
+        run: pip install -r requirements.txt
+
+      - name: Hent data, optimer og lag backtest
+        run: python -m pipeline.run
+
+      - name: Lagre live-logg i repoet
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/
+          if git diff --cached --quiet; then
+            echo "Ingen endring i state/."
+          else
+            git commit -m "Oppdater live-logg $(date -u +%Y-%m-%d)"
+            git pull --rebase origin main
+            git push
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+  publiser:
+    needs: bygg
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
