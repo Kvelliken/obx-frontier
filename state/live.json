@@ -24,6 +24,45 @@
     "vekter_for": {},
     "omsetning": 1.0,
     "merknader": []
+   },
+   {
+    "beslutningsdato": "2026-10-01",
+    "vekter": {
+     "EQNR.OL": 0.095714,
+     "ODL.OL": 0.080437,
+     "DNB.OL": 0.071683,
+     "STB.OL": 0.093651,
+     "SB1NO.OL": 0.051999,
+     "MING.OL": 0.044447,
+     "NONG.OL": 0.062434,
+     "SPOL.OL": 0.050649,
+     "KOG.OL": 0.042638,
+     "KIT.OL": 0.029386,
+     "WWI.OL": 0.108008,
+     "VEI.OL": 0.084982,
+     "NORCO.OL": 0.049746,
+     "PEXIP.OL": 0.060149,
+     "SATS.OL": 0.074078
+    },
+    "vekter_for": {
+     "DNB.OL": 0.072317,
+     "EQNR.OL": 0.094606,
+     "KIT.OL": 0.028585,
+     "KOG.OL": 0.044237,
+     "MING.OL": 0.048472,
+     "NONG.OL": 0.063297,
+     "NORCO.OL": 0.048497,
+     "ODL.OL": 0.0774,
+     "PEXIP.OL": 0.061547,
+     "SATS.OL": 0.073879,
+     "SB1NO.OL": 0.055071,
+     "SPOL.OL": 0.051898,
+     "STB.OL": 0.090961,
+     "VEI.OL": 0.085183,
+     "WWI.OL": 0.10405
+    },
+    "omsetning": 0.013,
+    "merknader": []
    }
   ],
   "bayes_stein": [
@@ -48,6 +87,45 @@
     },
     "vekter_for": {},
     "omsetning": 1.0,
+    "merknader": []
+   },
+   {
+    "beslutningsdato": "2026-10-01",
+    "vekter": {
+     "VAR.OL": 0.066862,
+     "BNOR.OL": 0.034696,
+     "ODL.OL": 0.053822,
+     "GJF.OL": 0.086215,
+     "MING.OL": 0.08133,
+     "NONG.OL": 0.048135,
+     "KIT.OL": 0.065603,
+     "WWI.OL": 0.067348,
+     "VEI.OL": 0.111578,
+     "NORCO.OL": 0.055965,
+     "ORK.OL": 0.068133,
+     "PEXIP.OL": 0.061994,
+     "TEL.OL": 0.06455,
+     "SATS.OL": 0.089524,
+     "ELMRA.OL": 0.044245
+    },
+    "vekter_for": {
+     "BNOR.OL": 0.034379,
+     "ELMRA.OL": 0.042664,
+     "GJF.OL": 0.086008,
+     "KIT.OL": 0.064361,
+     "MING.OL": 0.084819,
+     "NONG.OL": 0.050228,
+     "NORCO.OL": 0.059108,
+     "ODL.OL": 0.055176,
+     "ORK.OL": 0.070551,
+     "PEXIP.OL": 0.061879,
+     "SATS.OL": 0.086558,
+     "TEL.OL": 0.064778,
+     "VAR.OL": 0.066156,
+     "VEI.OL": 0.111339,
+     "WWI.OL": 0.061997
+    },
+    "omsetning": 0.0127,
     "merknader": []
    }
   ]
