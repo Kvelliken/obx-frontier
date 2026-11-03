@@ -63,6 +63,45 @@
     },
     "omsetning": 0.013,
     "merknader": []
+   },
+   {
+    "beslutningsdato": "2026-11-03",
+    "vekter": {
+     "EQNR.OL": 0.097019,
+     "ODL.OL": 0.084857,
+     "DNB.OL": 0.0723,
+     "STB.OL": 0.09235,
+     "PROT.OL": 0.047632,
+     "SB1NO.OL": 0.050548,
+     "MING.OL": 0.038772,
+     "NONG.OL": 0.05935,
+     "SPOL.OL": 0.039048,
+     "KOG.OL": 0.06111,
+     "WWI.OL": 0.095391,
+     "VEI.OL": 0.080932,
+     "NORCO.OL": 0.046525,
+     "PEXIP.OL": 0.055338,
+     "SATS.OL": 0.078827
+    },
+    "vekter_for": {
+     "DNB.OL": 0.072821,
+     "EQNR.OL": 0.098915,
+     "KIT.OL": 0.025572,
+     "KOG.OL": 0.049203,
+     "MING.OL": 0.044092,
+     "NONG.OL": 0.064171,
+     "NORCO.OL": 0.047374,
+     "ODL.OL": 0.084421,
+     "PEXIP.OL": 0.054696,
+     "SATS.OL": 0.079551,
+     "SB1NO.OL": 0.052552,
+     "SPOL.OL": 0.049446,
+     "STB.OL": 0.094037,
+     "VEI.OL": 0.083417,
+     "WWI.OL": 0.099732
+    },
+    "omsetning": 0.0606,
+    "merknader": []
    }
   ],
   "bayes_stein": [
@@ -126,6 +165,45 @@
      "WWI.OL": 0.061997
     },
     "omsetning": 0.0127,
+    "merknader": []
+   },
+   {
+    "beslutningsdato": "2026-11-03",
+    "vekter": {
+     "VAR.OL": 0.078005,
+     "BNOR.OL": 0.027203,
+     "ODL.OL": 0.057462,
+     "GJF.OL": 0.085499,
+     "MING.OL": 0.068043,
+     "NONG.OL": 0.04693,
+     "KIT.OL": 0.047899,
+     "WWI.OL": 0.058123,
+     "VEI.OL": 0.129754,
+     "NORCO.OL": 0.05492,
+     "ORK.OL": 0.088402,
+     "PEXIP.OL": 0.06371,
+     "TEL.OL": 0.060908,
+     "KID.OL": 0.039528,
+     "SATS.OL": 0.093615
+    },
+    "vekter_for": {
+     "BNOR.OL": 0.03521,
+     "ELMRA.OL": 0.043707,
+     "GJF.OL": 0.088589,
+     "KIT.OL": 0.057123,
+     "MING.OL": 0.080727,
+     "NONG.OL": 0.049503,
+     "NORCO.OL": 0.053328,
+     "ODL.OL": 0.056521,
+     "ORK.OL": 0.071851,
+     "PEXIP.OL": 0.056407,
+     "SATS.OL": 0.096195,
+     "TEL.OL": 0.068405,
+     "VAR.OL": 0.07062,
+     "VEI.OL": 0.109588,
+     "WWI.OL": 0.062224
+    },
+    "omsetning": 0.0935,
     "merknader": []
    }
   ]
